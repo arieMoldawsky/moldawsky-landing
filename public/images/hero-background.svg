@@ -1,0 +1,220 @@
+<svg
+        width="800"
+        height="600"
+        viewBox="0 0 800 600"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="xMidYMid meet"
+>
+    <!--
+      NOTE: The code below is a conceptual illustration.
+      You can tailor shapes, filters, colors, or background to achieve your ideal look.
+    -->
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- 1) DEFINITIONS: Gradients, Filters, and Clip Paths               -->
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <defs>
+        <!-- Background radial gradient for the sky-like backdrop -->
+        <radialGradient id="skyGradient" cx="50%" cy="40%" r="70%">
+            <stop offset="0%" stop-color="#f2f2f2"/>
+            <stop offset="100%" stop-color="#cfcfcf"/>
+        </radialGradient>
+
+        <!-- City silhouette gradient -->
+        <linearGradient id="cityGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#aaaaaa"/>
+            <stop offset="100%" stop-color="#666666"/>
+        </linearGradient>
+
+        <!-- Diamond facet gradient: uses lighter to darker grays for subtle 3D effect -->
+        <linearGradient id="diamondFacet" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#cccccc" stop-opacity="1"/>
+        </linearGradient>
+
+        <!-- Diamond highlight gradient (for extra “sparkle”) -->
+        <linearGradient id="diamondHighlight" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </linearGradient>
+
+        <!-- Filter for subtle drop shadow under the diamond -->
+        <filter id="diamondShadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+            <feOffset dx="0" dy="4" result="offsetBlur"/>
+            <feMerge>
+                <feMergeNode in="offsetBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- 2) BACKGROUND                                                    -->
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <rect
+            x="0"
+            y="0"
+            width="800"
+            height="600"
+            fill="url(#skyGradient)"
+    />
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- 3) DISTANT CITYSCAPE SILHOUETTE                                  -->
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- A broad silhouette of buildings for the background layer -->
+    <g opacity="0.4">
+        <!-- Large “horizon line” city blocks -->
+        <path
+                d="
+        M 0,450
+        L 50,420
+        L 70,420
+        L 90,400
+        L 130,400
+        L 150,380
+        L 180,380
+        L 200,360
+        L 250,360
+        L 280,340
+        L 310,340
+        L 340,310
+        L 370,310
+        L 400,320
+        L 430,280
+        L 460,280
+        L 500,270
+        L 540,280
+        L 570,260
+        L 610,260
+        L 630,280
+        L 650,260
+        L 700,260
+        L 720,290
+        L 740,290
+        L 800,320
+        L 800,600
+        L 0,600
+        Z
+      "
+                fill="url(#cityGradient)"
+        />
+    </g>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- 4) MID-RANGE BUILDINGS                                           -->
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <g opacity="0.5">
+        <!-- You can refine or duplicate these rectangles/polygons to form varied buildings. -->
+        <rect x="100" y="340" width="30" height="110" fill="#888888"/>
+        <rect x="150" y="320" width="40" height="130" fill="#777777"/>
+        <rect x="220" y="360" width="20" height="90"  fill="#999999"/>
+        <rect x="270" y="330" width="35" height="120" fill="#666666"/>
+        <rect x="320" y="350" width="25" height="100" fill="#888888"/>
+        <rect x="380" y="320" width="40" height="130" fill="#777777"/>
+        <rect x="430" y="340" width="25" height="110" fill="#999999"/>
+        <rect x="480" y="310" width="30" height="140" fill="#666666"/>
+        <rect x="530" y="350" width="30" height="100" fill="#888888"/>
+        <rect x="580" y="330" width="35" height="120" fill="#777777"/>
+        <rect x="640" y="340" width="25" height="110" fill="#999999"/>
+    </g>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- 5) CENTRAL DIAMOND + BACKDROP CIRCLE                             -->
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- A subtle circular background behind the diamond for contrast -->
+    <circle
+            cx="400"
+            cy="210"
+            r="100"
+            fill="#f0f0f0"
+            opacity="0.7"
+    />
+
+    <!-- Diamond shape using multiple polygons for “facets.”
+         Each polygon is partially transparent or uses gradient fills. -->
+    <g id="diamond" filter="url(#diamondShadow)">
+        <!-- Large polygon forming overall diamond boundary -->
+        <polygon
+                fill="url(#diamondFacet)"
+                stroke="#666"
+                stroke-width="0.5"
+                points="
+        400,50
+        470,210
+        400,370
+        330,210
+      "
+        />
+
+        <!-- Additional facets to create realistic layering -->
+        <!-- Top-left facet -->
+        <polygon
+                fill="#fefefe"
+                opacity="0.8"
+                points="
+        400,70
+        340,210
+        400,210
+      "
+        />
+        <!-- Top-right facet -->
+        <polygon
+                fill="#ececec"
+                opacity="0.8"
+                points="
+        400,70
+        400,210
+        460,210
+      "
+        />
+        <!-- Bottom-left facet -->
+        <polygon
+                fill="#ffffff"
+                opacity="0.7"
+                points="
+        400,210
+        340,210
+        400,350
+      "
+        />
+        <!-- Bottom-right facet -->
+        <polygon
+                fill="#e4e4e4"
+                opacity="0.7"
+                points="
+        400,210
+        400,350
+        460,210
+      "
+        />
+
+        <!-- Highlight overlay (optional “sparkle”) -->
+        <path
+                fill="url(#diamondHighlight)"
+                opacity="0.75"
+                d="
+        M 380,60
+        C 410,50 440,60 460,110
+        C 460,110 445,100 430,125
+        C 420,140 400,135 390,130
+        C 390,130 370,100 380,60
+        Z
+      "
+        />
+    </g>
+
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <!-- 6) FOREGROUND BUILDINGS                                          -->
+    <!-- ────────────────────────────────────────────────────────────────── -->
+    <g opacity="0.9">
+        <!-- A few closer/larger buildings for depth -->
+        <rect x="250" y="300" width="50"  height="150" fill="#777777"/>
+        <rect x="310" y="330" width="35"  height="120" fill="#555555"/>
+        <rect x="360" y="290" width="40"  height="160" fill="#888888"/>
+        <rect x="420" y="320" width="30"  height="130" fill="#666666"/>
+        <rect x="460" y="280" width="45"  height="170" fill="#777777"/>
+        <rect x="520" y="310" width="35"  height="140" fill="#555555"/>
+    </g>
+</svg>
