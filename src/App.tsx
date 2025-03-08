@@ -17,6 +17,8 @@ function App() {
     const { t, i18n } = useTranslation();
     const [isScrolled, setIsScrolled] = useState(false);
     const [showBackToTop, setShowBackToTop] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
     const timelineRef = useRef<HTMLDivElement>(null);
     const managementRef = useRef<HTMLDivElement>(null);
@@ -25,6 +27,15 @@ function App() {
     const changeLanguage = (lng: string) => {
         i18n.changeLanguage(lng);
         document.dir = lng === 'he' ? 'rtl' : 'ltr';
+    };
+
+    const toggleMobileMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+        setActiveDropdown(null);
+    };
+
+    const toggleDropdown = (dropdown: string) => {
+        setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
     };
 
     useEffect(() => {
@@ -68,21 +79,24 @@ function App() {
                 <div className="logo">
                     <img src="/moldawsky-landing/images/logo.png" alt={t('welcome')} />
                 </div>
+                <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
+                    ☰
+                </button>
                 <nav className="main-nav">
-                    <ul>
-                        <li><a href="#overview">{t('overview')}</a></li>
-                        <li><a href="#management">{t('management.title')}</a></li>
-                        <li className="dropdown">
-                            <button className="dropbtn">{t('divisions.title')}</button>
+                    <ul className={isMobileMenuOpen ? 'active' : ''}>
+                        <li><a href="#overview" onClick={() => setIsMobileMenuOpen(false)}>{t('overview')}</a></li>
+                        <li><a href="#management" onClick={() => setIsMobileMenuOpen(false)}>{t('management.title')}</a></li>
+                        <li className={`dropdown ${activeDropdown === 'divisions' ? 'active' : ''}`}>
+                            <button className="dropbtn" onClick={() => toggleDropdown('divisions')}>{t('divisions.title')}</button>
                             <div className="dropdown-content">
-                                <a href="#diamonds">{t('divisions.diamonds.title')}</a>
-                                <a href="#real-estate">{t('divisions.realEstate.title')}</a>
-                                <a href="#technology">{t('divisions.technology.title')}</a>
-                                <a href="#community">{t('divisions.community.title')}</a>
+                                <a href="#diamonds" onClick={() => setIsMobileMenuOpen(false)}>{t('divisions.diamonds.title')}</a>
+                                <a href="#real-estate" onClick={() => setIsMobileMenuOpen(false)}>{t('divisions.realEstate.title')}</a>
+                                <a href="#technology" onClick={() => setIsMobileMenuOpen(false)}>{t('divisions.technology.title')}</a>
+                                <a href="#community" onClick={() => setIsMobileMenuOpen(false)}>{t('divisions.community.title')}</a>
                             </div>
                         </li>
-                        <li><a href="#news">{t('news.title')}</a></li>
-                        <li><a href="#contact">{t('contact.title')}</a></li>
+                        <li><a href="#news" onClick={() => setIsMobileMenuOpen(false)}>{t('news.title')}</a></li>
+                        <li><a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>{t('contact.title')}</a></li>
                     </ul>
                     <div className="header-language-switch">
                         <button onClick={() => changeLanguage('en')}>{t('footer.language.en')}</button>

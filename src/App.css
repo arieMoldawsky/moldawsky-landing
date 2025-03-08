@@ -928,3 +928,149 @@ body {
     color: var(--light-text);
 }
 
+/* Mobile Navigation */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .main-nav ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--background-color);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav ul.active {
+        display: flex;
+    }
+
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: var(--alt-background);
+        margin-top: 0;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 0.75rem;
+    }
+
+    .hero {
+        padding: 1rem;
+        margin-top: 0;
+    }
+
+    .hero-content {
+        padding: 2rem;
+        margin-top: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .timeline::before {
+        left: 2rem;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-year {
+        text-align: left;
+        padding-left: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .timeline-content {
+        padding-left: 4rem;
+    }
+
+    .timeline-content::before {
+        left: 2rem;
+    }
+
+    .management-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-items {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-info {
+        padding-right: 0;
+    }
+
+    .contact-method {
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+}
+
+/* RTL Mobile Support */
+[dir="rtl"] .timeline::before {
+    left: auto;
+    right: 2rem;
+}
+
+[dir="rtl"] .timeline-year {
+    text-align: right;
+    padding-left: 0;
+    padding-right: 4rem;
+}
+
+[dir="rtl"] .timeline-content {
+    padding-left: 0;
+    padding-right: 4rem;
+}
+
+[dir="rtl"] .timeline-content::before {
+    left: auto;
+    right: 2rem;
+}
+
