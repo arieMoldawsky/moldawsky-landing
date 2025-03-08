@@ -82,8 +82,8 @@ function App() {
                 <button className="mobile-menu-btn" onClick={toggleMobileMenu}>
                     ☰
                 </button>
-                <nav className="main-nav">
-                    <ul className={isMobileMenuOpen ? 'active' : ''}>
+                <nav className={`main-nav ${isMobileMenuOpen ? 'active' : ''}`}>
+                    <ul>
                         <li><a href="#overview" onClick={() => setIsMobileMenuOpen(false)}>{t('overview')}</a></li>
                         <li><a href="#management" onClick={() => setIsMobileMenuOpen(false)}>{t('management.title')}</a></li>
                         <li className={`dropdown ${activeDropdown === 'divisions' ? 'active' : ''}`}>
