@@ -69,26 +69,32 @@ const resources = {
                 ]
             },
             contact: {
-                title: "Contact",
-                intro: "Get in touch with us for inquiries, partnerships, or more information. We'd love to hear from you.",
+                title: "Contact Us",
+                intro: "We invite you to contact us with any questions or inquiries",
                 form: {
-                    name: "Name",
+                    name: "Full Name",
                     email: "Email",
-                    message: "Message",
-                    namePlaceholder: "Your name...",
-                    emailPlaceholder: "Your email...",
-                    messagePlaceholder: "Your message...",
-                    submit: "Submit"
+                    message: "Message Content",
+                    namePlaceholder: "Enter your name...",
+                    emailPlaceholder: "Enter your email address...",
+                    messagePlaceholder: "Enter your message content...",
+                    submit: "Send"
                 },
                 locations: {
                     title: "Our Offices",
                     israel: {
-                        title: "Israel Headquarters",
-                        address: "Israel Diamond Exchange, Maccabi Building, Room 454, Ramat Gan 5252447, Israel",
+                        title: "Main Office - Israel",
+                        address: "Israel Diamond Exchange",
+                        building: "Maccabi Building, Room 454",
+                        city: "Ramat Gan 5252447, Israel",
                         hours: "Business Hours",
+                        hoursValue: "Sunday - Thursday: 09:30-18:30",
                         phone: "Phone",
+                        phoneValue: "03-575-1410",
                         fax: "Fax",
-                        email: "Email"
+                        faxValue: "03-575-1411",
+                        email: "Email",
+                        emailValue: "info@moldawsky.com"
                     }
                 }
             },
@@ -116,12 +122,27 @@ const resources = {
                     {
                         year: "1948",
                         title: "Foundation",
-                        description: "Establishment of diamond operations"
+                        description: "Establishment of diamond operations in Israel"
                     },
                     {
-                        year: "1990",
-                        title: "Diamond Exchange",
-                        description: "Boaz Moldawsky becomes a member of the Israel Diamond Exchange"
+                        year: "1960",
+                        title: "Global Expansion",
+                        description: "Opening of international diamond trading offices"
+                    },
+                    {
+                        year: "1980",
+                        title: "Real Estate Development",
+                        description: "Launch of real estate division with first major commercial project"
+                    },
+                    {
+                        year: "2000",
+                        title: "Technology Ventures",
+                        description: "Establishment of technology investment division"
+                    },
+                    {
+                        year: "2010",
+                        title: "Community Initiatives",
+                        description: "Launch of community-focused philanthropic programs"
                     },
                     {
                         year: "2021",
@@ -137,12 +158,12 @@ const resources = {
                     boaz: {
                         name: "Boaz Moldawsky",
                         role: "Co-Managing Director",
-                        bio: "President of the Israel Diamond Exchange since 2021, Board member of the World Federation of Diamond Bourses, and the World Diamond Council. Leading the group's strategic development with focus on global expansion."
+                        bio: "President of the Israel Diamond Exchange since 2021, Board member of the World Federation of Diamond Bourses, and the World Diamond Council. Leading the group's strategic development with focus on global expansion. Heads both the Diamond and Real Estate divisions, driving growth and innovation across both sectors."
                     },
                     yossi: {
                         name: "Yossi Moldawsky",
                         role: "Co-Managing Director",
-                        bio: "Driving the group's technological innovation and real estate development, with a focus on identifying and nurturing groundbreaking opportunities across sectors."
+                        bio: "Leading the group's technological innovation and real estate development strategies. Spearheads investments in cutting-edge technology startups and oversees major real estate projects across Israel. Focuses on identifying transformative opportunities in AI, fintech, and sustainable development, while driving the group's digital transformation initiatives."
                     }
                 }
             }
