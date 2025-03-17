@@ -164,7 +164,7 @@ function App() {
                 <p>{t('management.description')}</p>
                 <div className="management-grid">
                     <div className="management-card fade-up">
-                        <img src="/moldawsky-landing/images/management/boaz.jpg" alt={t('management.team.boaz.name')} className="management-image" />
+                        <img src="/moldawsky-landing/images/boaz.jpg" alt={t('management.team.boaz.name')} className="management-image" />
                         <div className="management-info">
                             <h3 className="management-name">{t('management.team.boaz.name')}</h3>
                             <div className="management-role">{t('management.team.boaz.role')}</div>
@@ -172,7 +172,7 @@ function App() {
                         </div>
                     </div>
                     <div className="management-card fade-up">
-                        <img src="/moldawsky-landing/images/management/yossi.jpg" alt={t('management.team.yossi.name')} className="management-image" />
+                        <img src="/moldawsky-landing/images/Yossi.jpg" alt={t('management.team.yossi.name')} className="management-image" />
                         <div className="management-info">
                             <h3 className="management-name">{t('management.team.yossi.name')}</h3>
                             <div className="management-role">{t('management.team.yossi.role')}</div>
